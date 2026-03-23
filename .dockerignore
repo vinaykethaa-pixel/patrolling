@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+db.sqlite3
+.env
+media/
+.git/
+.gitignore
+task.md
+start_server.bat
+yolov8n.pt
