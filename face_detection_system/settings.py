@@ -128,8 +128,10 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+import os
+
 # Twilio SMS Configuration
-TWILIO_ACCOUNT_SID = 'your_account_sid_here'
-TWILIO_AUTH_TOKEN = 'your_auth_token_here'
-TWILIO_PHONE_NUMBER = 'your_twilio_phone_number_here'
-ADMIN_PHONE_NUMBER = '+916281361684'
+TWILIO_ACCOUNT_SID = os.environ.get('TWILIO_ACCOUNT_SID', 'your_account_sid_here')
+TWILIO_AUTH_TOKEN = os.environ.get('TWILIO_AUTH_TOKEN', 'your_auth_token_here')
+TWILIO_PHONE_NUMBER = os.environ.get('TWILIO_PHONE_NUMBER', 'your_twilio_phone_number_here')
+ADMIN_PHONE_NUMBER = os.environ.get('ADMIN_PHONE_NUMBER', '+916281361684')
