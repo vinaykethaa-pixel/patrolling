@@ -20,6 +20,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy project files
 COPY . /app/
+RUN python manage.py collectstatic --noinput
 
 # Expose the default port (Render will override if needed)
 EXPOSE 8000

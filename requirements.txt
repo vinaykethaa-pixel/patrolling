@@ -8,3 +8,4 @@ dlib==19.24.2
 cmake==3.28.1
 twilio==9.0.0
 gunicorn==21.2.0
+whitenoise==6.6.0
