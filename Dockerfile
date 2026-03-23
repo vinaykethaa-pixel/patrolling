@@ -6,12 +6,16 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+# Prevent OOM on Render's free tier by limiting CMake jobs
+ENV CMAKE_BUILD_PARALLEL_LEVEL=1
+
 # Install system dependencies required for dlib and OpenCV
 RUN apt-get update && apt-get install -y \
     build-essential \
     cmake \
     libgl1 \
     libglib2.0-0 \
+    python3-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
